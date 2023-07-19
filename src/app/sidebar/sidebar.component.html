@@ -1,0 +1,36 @@
+<div class="sidebar" [ngClass]="{'sidebar-open': selectedButton !== ''}">
+  <ul *ngIf="selectedButton === 'introduction'">
+    <li><a routerLink="css/introduction/what-is-css">What is CSS</a></li>
+    <li><a routerLink="css/introduction/css-basics">CSS Basics</a></li>
+    <li><a routerLink="css/introduction/css-careers">CSS Careers</a></li>
+  </ul>
+  <ul *ngIf="selectedButton === 'resources'">
+    <li><a routerLink="css/resources/resources-documents">Documents</a></li>
+    <li><a routerLink="css/resources/resources-forms">Forms</a></li>
+    <li><a routerLink="css/resources/resources-tutorials">Tutorials</a></li>
+    <li><a routerLink="css/resources/resources-test-yourself">Test Yourself</a></li>
+  </ul>
+  <ul *ngIf="selectedButton === 'js-tutorial'">
+    <li><a routerLink="javascript/js-tutorial/js-home">Home</a></li>
+    <li><a routerLink="javascript/js-tutorial/js-introduction">Introduction</a></li>
+    <li><a routerLink="javascript/js-tutorial/js-output">Output</a></li>
+    <li><a routerLink="javascript/js-tutorial/js-where-to">Where To</a></li>
+  </ul>
+  <ul *ngIf="selectedButton === 'php-tutorial'">
+    <li><a routerLink="php/php-tutorial/php-install">Install</a></li>
+    <li><a routerLink="php/php-tutorial/php-syntax">Syntax</a></li>
+    <li><a routerLink="php/php-tutorial/php-comments">Comments</a></li>
+  </ul>
+  <ul *ngIf="selectedButton === 'sql-tutorial'">
+    <li><a routerLink="sql/sql-tutorial/sql-intro">Introduction</a></li>
+    <li><a routerLink="sql/sql-tutorial/sql-select">SQL Select</a></li>
+    <li><a routerLink="sql/sql-tutorial/sql-syntax">SQL Syntax</a></li>
+  </ul>
+</div>
+<div class="content" *ngIf="selectedButton!==''">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="selectedButton===''">
+  <router-outlet></router-outlet>
+</div>
+

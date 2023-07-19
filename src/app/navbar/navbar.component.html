@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item">
+      <a routerLink="" class="navbar-link" (click)="handleClick('')">Home</a>
+    </li>
+    <li class="navbar-item" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false" >
+      <a class="navbar-link" (click)="handleClick('')">CSS</a>
+      <ul class="dropdown-menu" *ngIf="showDropdown">
+        <li class="navbar-item" (click)="handleClick('introduction')">
+          <a routerLink="css/introduction" class="navbar-link">Introduction</a>
+        </li>
+        <li class="navbar-item" (click)="handleClick('resources')">
+          <a routerLink="css/resources" class="navbar-link">Resources</a>
+        </li>        
+      </ul>
+    </li>
+    <li class="navbar-item" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false" >
+      <a class="navbar-link" (click)="handleClick('')">JavaScript</a>
+      <ul class="dropdown-menu" *ngIf="showDropdown">
+        <li class="navbar-item" (click)="handleClick('js-tutorial')">
+          <a routerLink="javascript/js-tutorial" class="navbar-link">Tutorial</a>
+        </li>
+      </ul>
+      </li>
+    <li class="navbar-item" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false" >
+      <a class="navbar-link" (click)="handleClick('')">SQL</a>
+      <ul class="dropdown-menu" *ngIf="showDropdown">
+        <li class="navbar-item" (click)="handleClick('sql-tutorial')">
+          <a routerLink="sql/sql-tutorial" class="navbar-link">Tutorial</a>
+        </li>
+      </ul>
+    </li>
+    <li class="navbar-item" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false" >
+      <a class="navbar-link" (click)="handleClick('')">PHP</a>
+      <ul class="dropdown-menu" *ngIf="showDropdown">
+        <li class="navbar-item" (click)="handleClick('php-tutorial')">
+          <a routerLink="php/php-tutorial" class="navbar-link">Tutorial</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<app-sidebar [selectedButton]="selectedButton"></app-sidebar>
+<router-outlet></router-outlet>
